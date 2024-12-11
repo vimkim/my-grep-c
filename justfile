@@ -9,9 +9,13 @@ run args:
     make
     ./my-c-grep {{ args }}
 
-test:
+test-small:
     make
-    ./my-c-grep testfiles "apple"
+    ./my-c-grep testfiles/small "apple"
+
+test-large:
+    make
+    ./my-c-grep testfiles/large "apple"
 
 # Clean up the binary using make
 clean:
