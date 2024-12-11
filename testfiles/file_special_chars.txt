@@ -1,0 +1,3 @@
+This $line contains special* characters like ^, $, *, and +.
+Another line with parentheses ( ) and brackets [ ].
+A line with a | pipe symbol.

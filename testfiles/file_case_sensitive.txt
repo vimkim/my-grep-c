@@ -1,0 +1,3 @@
+This line has the word Apple.
+Another line with apple in lowercase.
+APPLE is here in uppercase.
