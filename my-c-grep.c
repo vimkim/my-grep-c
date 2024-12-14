@@ -1,7 +1,7 @@
+#include <dirent.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <dirent.h>
 #include <sys/stat.h>
 
 #define MAX_LINE_LENGTH 1024
@@ -17,7 +17,9 @@ void search_in_file(const char *filename, const char *search_str) {
     int line_number = 0;
 
     while (fgets(line, sizeof(line), file)) {
+
         line_number++;
+
         if (strstr(line, search_str)) {
             printf("%s:%d: %s", filename, line_number, line);
         }
@@ -39,7 +41,8 @@ void search_in_directory(const char *dir_name, const char *search_str) {
 
     while ((entry = readdir(dir))) {
         // Skip "." and ".."
-        if (strcmp(entry->d_name, ".") == 0 || strcmp(entry->d_name, "..") == 0) {
+        if (strcmp(entry->d_name, ".") == 0 ||
+            strcmp(entry->d_name, "..") == 0) {
             continue;
         }
 
@@ -75,4 +78,3 @@ int main(int argc, char *argv[]) {
 
     return EXIT_SUCCESS;
 }
-
