@@ -1,7 +1,7 @@
 # Justfile for running my-c-grep
 
 # Default recipe to run the program
-@default:
+@_default:
     just --choose
 
 # Recipe to run the program after building it with make
